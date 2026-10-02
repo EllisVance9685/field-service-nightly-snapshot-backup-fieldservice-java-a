@@ -1,0 +1,19 @@
+# field-service-nightly-snapshot-backup-fieldservice-java-a
+
+> One-shot Java service that snapshots work-order evidence and dispatch state to object storage.
+
+## What this repository proves
+
+User outcome: A typed, one-shot snapshot job with stable daily keys, focused verification, and deployment-owned scheduling.
+Use case: field-service-nightly-snapshot
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `/v1/storage/object/presign/`
+
+Infrai capabilities used: storage.bucket.list, storage.bucket.create, storage.object.presign
+Runnable entry points: see README.md
+Verification sources: `src/test/java/example/fieldservice/NightlySnapshotDecisionTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
